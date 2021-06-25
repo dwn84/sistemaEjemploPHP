@@ -9,9 +9,11 @@ Registrar profesores, estudiantes y administradores.
 * Asocia estudiantes y profesores a grupos
 * Modifica las imágenes del carrusel inicial
 ## El profesor:
-	Asigna noticias y actividades evaluativas, califica actividades evaluativas
+* Asigna noticias y actividades evaluativas
+* Califica actividades evaluativas
 ## El estudiante:
-	Responde actividades evaluativas, visualizar las noticias y notas
+* Responde actividades evaluativas
+* Visualiza las noticias y notas
 
 ## Base de datos
 Usuarios (cedula, nombre, apellido, password, tipoUsuario)\
