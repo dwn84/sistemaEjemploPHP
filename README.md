@@ -5,9 +5,9 @@ Sistema de control de notas y noticias para grupos de la Institución educativa 
 ## Debe permitir: 
 Registrar profesores, estudiantes y administradores.
 ## El administrador: 
-	* Crea grupos, crea estudiantes, crear profesores
-	* Asocia estudiantes y profesores a grupos
-	* Modifica las imágenes del carrusel inicial
+* Crea grupos, crea estudiantes, crear profesores
+* Asocia estudiantes y profesores a grupos
+* Modifica las imágenes del carrusel inicial
 ## El profesor:
 	Asigna noticias y actividades evaluativas, califica actividades evaluativas
 ## El estudiante:
