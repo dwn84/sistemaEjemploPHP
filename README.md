@@ -1,6 +1,6 @@
 # Sistema institucional X Ejemplo PHP
 
-## Funcionalidades del sistema
+## Descripción general
 Sistema de control de notas y noticias para un curso de la Institución educativa X (Similar a Territorium)
 ## Debe permitir: 
 Registrar profesores, estudiantes y administradores
