@@ -21,7 +21,7 @@ RegistroGrupo(idGrupo, cedula)\
 Carrusel(idCarrusel, imagen)\
 Noticias(idNoticia, idGrupo, titular, descripcion, fecha, imagen)\
 Evaluaciones(idEvaluacion, idGrupo, descripción, adjuntoInstrucciones,fechaLimite)\
-Notas(idNota, idEvaluacion, cedula, valornota, adjuntoSolucion)\
+Notas(idNota, idEvaluacion, cedula, valornota, adjuntoSolucion)
 
 ![Base de datos](https://raw.githubusercontent.com/dwn84/sistemaEjemploPHP/main/sistemaX/BaseDeDatos.png)
 
