@@ -14,7 +14,7 @@ Registrar profesores, estudiantes y administradores
 	Responde actividades evaluativas, visualizar las noticias y notas
 
 # Base de datos
-Usuarios (cedula, nombre, apellido, password, tipoUsuario)
+Usuarios (cedula, nombre, apellido, password, tipoUsuario)\
 TipoUsuarios(idTipoUsuario, descripcion)
 Grupos(idGrupo, descripcion) 
 RegistroGrupo(idGrupo, cedula)
