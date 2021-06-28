@@ -11,26 +11,50 @@
   
 <!-- Consulta a base de datos: SELECT * FROM carrusel--> 
 	<?php
-		include 'conexionBD.php';.
+		include 'conexionBD.php';
 		$datos = $conexion->query("select * from carrusel");
 	
 	?>
  
   <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-	
-    
+
+    <?php    
+    $i = 0;
+      while($i<$datos->num_rows):
+        if($i==0):
+          echo "
+          <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='$i' class='active' aria-current='true' aria-label='Slide $i'></button>
+          ";
+        else:
+          echo "
+            <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='$i' aria-label='Slide $i'></button>      
+          ";
+        endif;
+        $i++;
+      endwhile;
+      ?>         
   </div>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="http://127.0.0.1/sistemaX/img/carrusel1.jpg" class="d-block w-100" alt="Carrusel 1">
-    </div>
-	<div class="carousel-item">
-      <img src="http://127.0.0.1/sistemaX/img/carrusel2.jpg" class="d-block w-100" alt="Carrusel 2">
-    </div>
-
-    
+<?php
+      $i = 0;
+			while($fila = $datos->fetch_array()):
+        if($i==0):
+          echo"
+          <div class='carousel-item active'>
+            <img src='$fila[imagen]' class='d-block w-100' alt='Carrusel $i'>
+          </div>
+          ";
+        else:
+          echo"
+          <div class='carousel-item'>
+            <img src='$fila[imagen]' class='d-block w-100' alt='Carrusel $i'>
+          </div>
+          ";
+        endif;
+        $i++;
+      endwhile;
+?>   
+	  
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -41,6 +65,9 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
+<a href="login.php"><button type="button" class="btn btn-info fixed-top">Iniciar sesión</button></a>
+
 	
 	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
