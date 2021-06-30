@@ -11,7 +11,8 @@ create table Grupos(
 );
 create table Carrusel(
 	idCarrusel int AUTO_INCREMENT primary key,
-    imagen varchar(50)
+    imagen varchar(50),
+	visible tinyint
 );
 create table Usuarios(
 	cedula varchar(11) primary key, 
@@ -53,8 +54,8 @@ create table Notas(
     adjuntoSolucion varchar(55),
 	foreign key (idEvaluacion) REFERENCES Evaluaciones(idEvaluacion),
 	foreign key (cedula) REFERENCES Usuarios(cedula)
-)
+);
 
 INSERT INTO carrusel (idCarrusel, imagen) VALUES (NULL, 'img/carrusel1.jpg'), (NULL, 'img/carrusel2.jpg'),(NULL, 'img/carrusel3.jpg'),(NULL, 'img/carrusel4.jpg')  ; 
 INSERT INTO tipousuario (descripcion) VALUES ('administrador'), ('profesor'),('estudiante'); 
-INSERT INTO usuarios (cedula, nombre, apellido, password, tipoUsuario) VALUES ('55555', 'Eddie', 'Smith', MD5('123456'), '3'), ('44444', 'Tony', 'Choper', MD5('123456'), '4'),('33333','Esperanza','Gomez',MD5('123456'),'5'); 
+INSERT INTO usuarios (cedula, nombre, apellido, password, tipoUsuario) VALUES ('55555', 'Eddie', 'Smith', MD5('123456'), '1'), ('44444', 'Tony', 'Choper', MD5('123456'), '2'),('33333','Esperanza','Gomez',MD5('123456'),'3'); 

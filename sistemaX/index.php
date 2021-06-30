@@ -12,7 +12,7 @@
 <!-- Consulta a base de datos: SELECT * FROM carrusel--> 
 	<?php
 		include 'conexionBD.php';
-		$datos = $conexion->query("select * from carrusel");
+		$datos = $conexion->query("select * from carrusel where visible = 1");
 	
 	?>
  
