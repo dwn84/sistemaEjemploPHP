@@ -40,8 +40,7 @@ create table Noticias(
 );
 create table Evaluaciones(
 	idEvaluacion int AUTO_INCREMENT primary key, 
-    idGrupo int,
-    titular varchar(100),
+    idGrupo int, 
     descripción varchar(210), 
     adjuntoInstrucciones varchar(55),
     fechaLimite date,
@@ -61,4 +60,4 @@ INSERT INTO carrusel VALUES (1, 'img/carrusel1.jpg',1), (2, 'img/carrusel2.jpg',
 INSERT INTO tipousuario (descripcion) VALUES ('administrador'), ('profesor'),('estudiante'); 
 INSERT INTO usuarios (cedula, nombre, apellido, password, tipoUsuario) VALUES ('55555', 'Eddie', 'Smith', MD5('123456'), '1'), ('44444', 'Tony', 'Choper', MD5('123456'), '2'),('33333','Esperanza','Gomez',MD5('123456'),'3'); 
 INSERT INTO grupos (idGrupo, descripcion) VALUES (NULL, '2222243'), (NULL, '2222147');
-INSERT INTO registrogrupo (idGrupo, cedula) VALUES (1, '33333');
+INSERT INTO `registrogrupo` (`idGrupo`, `cedula`) VALUES ('1', '33333');

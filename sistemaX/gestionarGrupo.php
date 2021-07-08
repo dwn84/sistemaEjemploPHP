@@ -55,21 +55,12 @@
 				$datos = $datos->get_result();
 				echo "<div class='row'>
 						<div class='col-6'>
-						<h3>Lista registrados</h3>
-						<form action='retirarUsuariosGrupo.php' method='post'>							
-							<input type='hidden' value=$txtDescripcionGrupo name='txtDescripcionGrupo'>";				
-				while($fila = $datos->fetch_assoc()):						
-					echo "<div class='checkbox'>
-							<label><input type='checkbox' name='check_cedulas[]' value='$fila[ced]'>$fila[ced] $fila[nom] $fila[rol]<br></label>
-						</div>";					
+						";				
+				while($fila = $datos->fetch_assoc()):				
+					echo $fila['ced']." - ".$fila['nom']." - ".$fila['rol']."<br>";
 				endwhile;
-				echo "
-							<button type='submit' class='btn btn-danger' name='enviar'>Retirar estudiantes seleccionados</button>
-						</form>
-					
-					</div>
+				echo "</div>
 						<div class='col-6'>
-						<h3>Lista usuarios sin grupo</h3>
 					";
 					//buscar todos los usuarios que NO tienen grupo
 					$sql = "SELECT u.cedula as ced, u.nombre as nom, rg.idGrupo,tu.descripcion as rol  
@@ -83,7 +74,7 @@
 					echo "<form action='agregarUsuariosGrupo.php' method='post'>
 							<input type='hidden' value=$idGrupo name='txtIdGrupo'>
 							<input type='hidden' value=$txtDescripcionGrupo name='txtDescripcionGrupo'>
-							<label class='heading'>Seleccione usuarios para agregar al grupo $grupo:</label>					
+							<label class='heading'>Seleccione usuarios para agreagar al grupo $grupo:</label>					
 										";
 					$datos = $datos->get_result();
 					while($fila = $datos->fetch_assoc()):				
