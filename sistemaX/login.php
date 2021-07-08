@@ -4,10 +4,12 @@ $mensaje = null;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 require_once "conexionBD.php";	    
 $contraEncriptada = md5($_REQUEST['txtPassword']);
-$sql = "select u.cedula,u.nombre, u.password, tp.descripcion 
+$sql = "select u.cedula,u.nombre, u.password, tp.descripcion, rg.idGrupo 
             from usuarios as u        
         join tipousuario as tp 
-            on u.tipoUsuario=tp.idTipoUsuario
+            on u.tipoUsuario=tp.idTipoUsuario            
+        left join registrogrupo as rg
+        	on u.cedula =rg.cedula
         where u.cedula = ? 
         and u.password = ?
         ";		
@@ -26,6 +28,7 @@ if($fila =$datos->fetch_assoc()){
     session_start();
     $_SESSION['usuario'] = $fila['nombre'];
     $_SESSION['rolUsuario'] = $fila['descripcion'];
+    $_SESSION['idGrupo'] = $fila['idGrupo'];
     //redirreción - cargar otra página
     header('Location: inicio.php');
 }else{
