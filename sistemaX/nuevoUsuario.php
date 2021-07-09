@@ -7,8 +7,8 @@
         $datos = $conexion->prepare("insert into usuarios values(?,?,?,?,?);");
         $password = md5($_POST['txtpassword']);
         $datos->bind_param('ssssi',
-                                    $_POST['txtcedula'],
                                     $_POST['txtnombre'],
+                                    $_POST['txtcedula'],
                                     $_POST['txtapellido'],
                                     $password,
                                     $_POST['txtRol']

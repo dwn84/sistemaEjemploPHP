@@ -29,6 +29,7 @@ if($fila =$datos->fetch_assoc()){
     $_SESSION['usuario'] = $fila['nombre'];
     $_SESSION['rolUsuario'] = $fila['descripcion'];
     $_SESSION['idGrupo'] = $fila['idGrupo'];
+	$_SESSION['cedula'] = $fila['cedula'];
     //redirreción - cargar otra página
     header('Location: inicio.php');
 }else{

@@ -40,8 +40,9 @@ create table Noticias(
 );
 create table Evaluaciones(
 	idEvaluacion int AUTO_INCREMENT primary key, 
-    idGrupo int, 
-    descripción varchar(210), 
+    idGrupo int,
+	titular varchar(200),
+    descripción varchar(2000), 
     adjuntoInstrucciones varchar(55),
     fechaLimite date,
     foreign key (idGrupo) REFERENCES Grupos(idGrupo)
